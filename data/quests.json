@@ -1,0 +1,233 @@
+{
+  "storyActs": [
+    {
+      "id": "act1",
+      "name": "Act 1 — The Gathering",
+      "acts": 1,
+      "chapters": 4,
+      "energyPerQuest": 15,
+      "difficulty": "Beginner",
+      "starRestriction": { "min": 1, "max": 3 },
+      "description": "The Collector gathers champions from across the universe."
+    },
+    {
+      "id": "act2",
+      "name": "Act 2 — The Challenge",
+      "acts": 2,
+      "chapters": 4,
+      "energyPerQuest": 18,
+      "difficulty": "Normal",
+      "starRestriction": { "min": 2, "max": 4 },
+      "description": "Prove your worth against increasingly difficult foes."
+    },
+    {
+      "id": "act3",
+      "name": "Act 3 — The Conqueror",
+      "acts": 3,
+      "chapters": 4,
+      "energyPerQuest": 22,
+      "difficulty": "Normal",
+      "starRestriction": { "min": 3, "max": 5 },
+      "description": "Face the first real tests of your champion roster."
+    },
+    {
+      "id": "act4",
+      "name": "Act 4 — The Realm of Legends",
+      "acts": 4,
+      "chapters": 4,
+      "energyPerQuest": 28,
+      "difficulty": "Hard",
+      "starRestriction": { "min": 3, "max": 5 },
+      "description": "Enter the Realm of Legends. The difficulty ramps up significantly."
+    },
+    {
+      "id": "act5",
+      "name": "Act 5 — The Contest",
+      "acts": 5,
+      "chapters": 6,
+      "energyPerQuest": 35,
+      "difficulty": "Very Hard",
+      "starRestriction": { "min": 4, "max": 6 },
+      "description": "The Contest proper begins. Nodes become complex and require specific counters.",
+      "unlocksProgress": "Uncollected"
+    },
+    {
+      "id": "act6",
+      "name": "Act 6 — The Mad Titan's Shadow",
+      "acts": 6,
+      "chapters": 6,
+      "energyPerQuest": 40,
+      "difficulty": "Expert",
+      "starRestriction": { "min": 5, "max": 6 },
+      "description": "Thanos's influence warps reality. Global nodes demand deep rosters.",
+      "unlocksProgress": "Cavalier"
+    },
+    {
+      "id": "act7",
+      "name": "Act 7 — The Grandmaster's Play",
+      "acts": 7,
+      "chapters": 6,
+      "energyPerQuest": 45,
+      "difficulty": "Master",
+      "starRestriction": { "min": 5, "max": 6 },
+      "description": "The Grandmaster's personal gauntlet. Path selection becomes crucial.",
+      "unlocksProgress": "Paragon"
+    },
+    {
+      "id": "act8",
+      "name": "Act 8 — Convergence",
+      "acts": 8,
+      "chapters": 6,
+      "energyPerQuest": 50,
+      "difficulty": "Master",
+      "starRestriction": { "min": 6, "max": 7 },
+      "description": "Realities collide. Requires rank 3+ 6-star champions.",
+      "unlocksProgress": "Paragon"
+    },
+    {
+      "id": "act9",
+      "name": "Act 9 — The End of Time",
+      "acts": 9,
+      "chapters": 6,
+      "energyPerQuest": 55,
+      "difficulty": "Grandmaster",
+      "starRestriction": { "min": 6, "max": 7 },
+      "description": "The final act. Only the strongest 6/7-star champions will survive.",
+      "unlocksProgress": "Valiant"
+    }
+  ],
+  "eventQuests": [
+    {
+      "id": "eq",
+      "name": "Monthly Event Quest",
+      "type": "Monthly",
+      "description": "Monthly thematic quest with 5 difficulties. Rewards 5/6/7-star shards, rank-up materials.",
+      "difficulties": [
+        { "name": "Normal", "pi": 3000, "starMin": 3 },
+        { "name": "Heroic", "pi": 6000, "starMin": 4 },
+        { "name": "Master", "pi": 10000, "starMin": 4 },
+        { "name": "Uncollected", "pi": 15000, "starMin": 5 },
+        { "name": "Cavalier", "pi": 22000, "starMin": 5 },
+        { "name": "Paragon", "pi": 30000, "starMin": 6 }
+      ]
+    },
+    {
+      "id": "sq",
+      "name": "Monthly Side Quest",
+      "type": "Monthly",
+      "description": "Side quest running alongside the Event Quest. Shorter paths, unique rewards.",
+      "difficulties": [
+        { "name": "Normal", "pi": 3000, "starMin": 3 },
+        { "name": "Heroic", "pi": 6000, "starMin": 4 },
+        { "name": "Master", "pi": 10000, "starMin": 4 },
+        { "name": "Uncollected", "pi": 15000, "starMin": 5 },
+        { "name": "Cavalier", "pi": 22000, "starMin": 5 }
+      ]
+    },
+    {
+      "id": "abyss",
+      "name": "Abyss of Legends",
+      "type": "Endgame",
+      "description": "Permanent endgame content. 10 fights with massive health pools and special nodes.",
+      "difficulties": [
+        { "name": "Abyss", "pi": 45000, "starMin": 5 },
+        { "name": "Abyss (Legend)", "pi": 65000, "starMin": 6 }
+      ]
+    },
+    {
+      "id": "necropolis",
+      "name": "Necropolis",
+      "type": "Endgame",
+      "description": "The hardest content in MCOC. Requires deep 6/7-star rosters. One-shot fights.",
+      "difficulties": [
+        { "name": "Necropolis", "pi": 70000, "starMin": 6 }
+      ]
+    },
+    {
+      "id": "battlegrounds",
+      "name": "Battlegrounds",
+      "type": "PvP",
+      "description": "Live PvP mode. Draft 5 attackers and 5 defenders. Compete for seasonal rewards.",
+      "difficulties": [
+        { "name": "Bronze", "pi": "Any" },
+        { "name": "Silver", "pi": 10000 },
+        { "name": "Gold", "pi": 15000 },
+        { "name": "Platinum", "pi": 25000 },
+        { "name": "Vibranium", "pi": 35000 },
+        { "name": "GC (Gladiator Circuit)", "pi": 50000 }
+      ]
+    },
+    {
+      "id": "carinasChallenge",
+      "name": "Carina's Challenges",
+      "type": "Challenge",
+      "description": "Permanent challenge content. Requires specific champion teams to complete objectives.",
+      "difficulties": [
+        { "name": "Vol. 1", "pi": 30000, "starMin": 5 },
+        { "name": "Vol. 2", "pi": 45000, "starMin": 6 },
+        { "name": "Vol. 3", "pi": 60000, "starMin": 6 }
+      ]
+    },
+    {
+      "id": "incursions",
+      "name": "Incursions",
+      "type": "Co-op",
+      "description": "2-player co-op mode. Choose rooms and rooms modifiers. Prizes include 6-star shards.",
+      "difficulties": [
+        { "name": "Sector 1-3", "pi": 5000 },
+        { "name": "Sector 4-6", "pi": 15000 },
+        { "name": "Sector 7-8", "pi": 30000 },
+        { "name": "Sector 9-10", "pi": 50000 }
+      ]
+    },
+    {
+      "id": "arena",
+      "name": "Arena",
+      "type": "Competitive",
+      "description": "Rotation-based fighting. Win streaks to earn points. Top scorers earn new champions.",
+      "difficulties": [
+        { "name": "Basic", "pi": "Any", "starMin": 3 },
+        { "name": "Featured", "pi": 10000, "starMin": 4 },
+        { "name": "Premium", "pi": 15000, "starMin": 5 }
+      ]
+    }
+  ],
+  "difficultyTiers": [
+    {
+      "id": "beginner",
+      "name": "Beginner",
+      "description": "For new players. PI under 5000. Basic nodes only.",
+      "exampleContent": ["Act 1-2", "Normal Event Quest"]
+    },
+    {
+      "id": "normal",
+      "name": "Normal",
+      "description": "Early-mid game. PI 5000-10000. Simple node combinations.",
+      "exampleContent": ["Act 3-4", "Heroic Event Quest"]
+    },
+    {
+      "id": "hard",
+      "name": "Hard",
+      "description": "Mid game. PI 10000-18000. Starting to see global nodes.",
+      "exampleContent": ["Act 4-5", "Master Event Quest"]
+    },
+    {
+      "id": "expert",
+      "name": "Expert",
+      "description": "Late-mid game. PI 18000-30000. Complex node combos.",
+      "exampleContent": ["Act 6", "Uncollected Event Quest"]
+    },
+    {
+      "id": "master",
+      "name": "Master",
+      "description": "End game. PI 30000-50000. Requires specific counters.",
+      "exampleContent": ["Act 7-8", "Cavalier Event Quest"]
+    },
+    {
+      "id": "grandmaster",
+      "name": "Grandmaster",
+      "description": "The peak. PI 50000+. Requires deep 6/7-star roster.",
+      "exampleContent": ["Act 9", "Necropolis", "Paragon Event Quest"]
+    }
+  ]
+}

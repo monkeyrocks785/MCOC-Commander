@@ -1,0 +1,338 @@
+{
+  "crystals": [
+    {
+      "id": "grandmasterCrystal",
+      "name": "Grandmaster Crystal",
+      "type": "Basic",
+      "cost": 100,
+      "costType": "Units",
+      "description": "Standard crystal. Drops 2-star to 5-star champions.",
+      "starRange": { "min": 2, "max": 5 },
+      "valueRating": 2,
+      "expectedQuality": "Low",
+      "bestFor": ["Beginners", "ISO-8 farming"],
+      "worstFor": ["Endgame players"],
+      "tip": "Not worth buying for units. Save units for masteries."
+    },
+    {
+      "id": "premiumCrystal",
+      "name": "Premium Hero Crystal",
+      "type": "Basic",
+      "cost": 200,
+      "costType": "Units",
+      "description": "Slightly better than Grandmaster. Still mostly 3-star and 4-star champions.",
+      "starRange": { "min": 3, "max": 5 },
+      "valueRating": 2,
+      "expectedQuality": "Low",
+      "bestFor": ["Beginners", "ISO-8 farming"],
+      "worstFor": ["Mid-end game players"],
+      "tip": "Same as Grandmaster — avoid spending units here."
+    },
+    {
+      "id": "cavalierCrystal",
+      "name": "Cavalier Crystal",
+      "type": "Premium",
+      "cost": 200,
+      "costType": "Units",
+      "description": "Unlocked after reaching Cavalier. Drops 5-star, 6-star, and rarely 7-star champions.",
+      "starRange": { "min": 5, "max": 7 },
+      "valueRating": 3,
+      "expectedQuality": "Medium",
+      "bestFor": ["Cavalier players", "5-star awakening gems"],
+      "worstFor": ["Paragon+ players"],
+      "tip": "Decent value for early Cavaliers. Stop buying once you have a solid 6-star roster."
+    },
+    {
+      "id": "paragonCrystal",
+      "name": "Paragon Crystal",
+      "type": "Premium",
+      "cost": 300,
+      "costType": "Units",
+      "description": "Unlocked at Paragon. Guaranteed 6-star or 7-star champion.",
+      "starRange": { "min": 6, "max": 7 },
+      "valueRating": 4,
+      "expectedQuality": "High",
+      "bestFor": ["Paragon+ players"],
+      "worstFor": ["Players below Paragon"],
+      "tip": "Best value unit crystal for endgame players."
+    },
+    {
+      "id": "titanCrystal",
+      "name": "Titan Crystal",
+      "type": "Featured",
+      "cost": 300,
+      "costType": "Units",
+      "description": "Class-specific crystal. Higher chance at featured champs.",
+      "starRange": { "min": 6, "max": 7 },
+      "valueRating": 5,
+      "expectedQuality": "Very High",
+      "bestFor": ["Targeting specific class", "Whales"],
+      "worstFor": ["F2P hoarders"],
+      "tip": "Best value by far if you need a specific class champ."
+    },
+    {
+      "id": "nexusCrystal",
+      "name": "Nexus Crystal",
+      "type": "Featured",
+      "cost": 500,
+      "costType": "Units",
+      "description": "Pick 1 of 3 champions. Available in various rarities.",
+      "starRange": { "min": 5, "max": 7 },
+      "valueRating": 5,
+      "expectedQuality": "Very High",
+      "bestFor": ["Everyone"],
+      "worstFor": ["None"],
+      "tip": "Always buy nexus over basic if you can. Choice is powerful."
+    },
+    {
+      "id": "dualCrystal",
+      "name": "Dual Class Crystal",
+      "type": "Featured",
+      "cost": 150,
+      "costType": "Units",
+      "description": "Two classes combined. Improves odds for your target class.",
+      "starRange": { "min": 5, "max": 6 },
+      "valueRating": 4,
+      "expectedQuality": "High",
+      "bestFor": ["Class-specific needs", "Mid-game players"],
+      "worstFor": ["Beginners"],
+      "tip": "Great value for class-specific targeting."
+    },
+    {
+      "id": "featuredCrystal",
+      "name": "Featured 6-Star Crystal",
+      "type": "Featured",
+      "cost": 20000,
+      "costType": "6-Star Shards",
+      "description": "Contains the monthly featured champion at increased odds.",
+      "starRange": { "min": 6, "max": 6 },
+      "valueRating": 4,
+      "expectedQuality": "High",
+      "bestFor": ["Targeting featured champs"],
+      "worstFor": ["Roster builders"],
+      "tip": "Only open if you want the featured champ. Otherwise use basic."
+    },
+    {
+      "id": "basic6Star",
+      "name": "Basic 6-Star Crystal",
+      "type": "Basic",
+      "cost": 10000,
+      "costType": "6-Star Shards",
+      "description": "Random 6-star champion from the basic pool.",
+      "starRange": { "min": 6, "max": 6 },
+      "valueRating": 4,
+      "expectedQuality": "Medium",
+      "bestFor": ["Roster building"],
+      "worstFor": ["Whales"],
+      "tip": "Best way to build your 6-star roster."
+    },
+    {
+      "id": "basic7Star",
+      "name": "Basic 7-Star Crystal",
+      "type": "Basic",
+      "cost": 15000,
+      "costType": "7-Star Shards",
+      "description": "Random 7-star champion from the basic pool.",
+      "starRange": { "min": 7, "max": 7 },
+      "valueRating": 5,
+      "expectedQuality": "Very High",
+      "bestFor": ["Endgame roster building"],
+      "worstFor": ["Early game"],
+      "tip": "The ultimate endgame grind. Always worth opening."
+    }
+  ],
+  "offers": [
+    {
+      "id": "dailyUnitBundle",
+      "name": "Daily Unit Bundle",
+      "cost": 0.99,
+      "costType": "USD",
+      "contents": "75 Units + Bonus (scales with login streak)",
+      "valueRating": 4,
+      "verdict": "Buy",
+      "notes": "Best value small purchase. Buy daily if you spend."
+    },
+    {
+      "id": "sigilSubscription",
+      "name": "Summoner Sigil Subscription",
+      "cost": null,
+      "costType": "Monthly",
+      "contents": "Bonus daily calendar, store access, 10% unit bonus on purchases, mastery reset access",
+      "valueRating": 5,
+      "verdict": "Buy",
+      "notes": "Best value subscription in the game. The mastery reset alone is worth it."
+    },
+    {
+      "id": "weeklyUnitBundle",
+      "name": "Weekly Unit Bundle",
+      "cost": 4.99,
+      "costType": "USD",
+      "contents": "400 Units + Energy Refills",
+      "valueRating": 3,
+      "verdict": "Maybe",
+      "notes": "OK value if you need units quickly. Sigil is better."
+    },
+    {
+      "id": "rankUpGemBundle",
+      "name": "Rank-Up Gem Bundle",
+      "cost": null,
+      "costType": "Events",
+      "contents": "1x 6-star Rank 1-2 Gem + 1x 6-star Rank 2-3 Gem + catalysts",
+      "valueRating": 5,
+      "verdict": "Buy",
+      "notes": "Only available through events. Buy immediately."
+    },
+    {
+      "id": "freshStartBundle",
+      "name": "Fresh Start Bundle",
+      "cost": 9.99,
+      "costType": "USD",
+      "contents": "2-star to 5-star champions, Units, Gold, ISO-8",
+      "valueRating": 5,
+      "verdict": "Buy",
+      "notes": "Great value for new players. One-time purchase."
+    },
+    {
+      "id": "reviveBundle",
+      "name": "Revive Bundle",
+      "cost": 2.99,
+      "costType": "USD",
+      "contents": "5x 40% Revive, 5x 20% Health Potion",
+      "valueRating": 2,
+      "verdict": "Skip",
+      "notes": "Revives are better earned or bought with units."
+    },
+    {
+      "id": "energyBundle",
+      "name": "Energy Bundle",
+      "cost": 4.99,
+      "costType": "USD",
+      "contents": "5x Energy Refills + 100 Units",
+      "valueRating": 3,
+      "verdict": "Maybe",
+      "notes": "Only worth during grinding events."
+    },
+    {
+      "id": "masteryBundle",
+      "name": "Mastery Core Bundle",
+      "cost": null,
+      "costType": "Units",
+      "contents": "5x Stony Core + 3x Carb Core + 1x Stone Core",
+      "valueRating": 5,
+      "verdict": "Buy",
+      "notes": "Only available occasionally. Best value for mastery progression."
+    },
+    {
+      "id": "cyberWeekend",
+      "name": "Cyber Weekend Deal",
+      "cost": 99.99,
+      "costType": "USD",
+      "contents": "Premium hero crystal, unit packs, 6-star shards, rank-up gems",
+      "valueRating": 4,
+      "verdict": "Buy",
+      "notes": "Best yearly deal. Buy if you spend at all."
+    },
+    {
+      "id": "july4th",
+      "name": "4th of July Deal",
+      "cost": 99.99,
+      "costType": "USD",
+      "contents": "Premium hero crystal, unit packs, 6-star shards, rank-up gems",
+      "valueRating": 4,
+      "verdict": "Buy",
+      "notes": "Second best yearly deal after Cyber Weekend."
+    },
+    {
+      "id": "weeklyCarl",
+      "name": "Weekly Carl Offer",
+      "cost": 14.99,
+      "costType": "USD",
+      "contents": "2000 5-star shards, catalysts, ISO-8",
+      "valueRating": 2,
+      "verdict": "Skip",
+      "notes": "Overpriced. Better spent elsewhere."
+    }
+  ],
+  "spendingPriority": [
+    {
+      "rank": 1,
+      "category": "Mastery Cores",
+      "description": "Carb Cores (x10), Stony Cores (x3), Stone Cores (x1)",
+      "estimatedCost": 3350,
+      "costType": "Units",
+      "notes": "Masteries are permanent. Invest here first."
+    },
+    {
+      "rank": 2,
+      "category": "Energy Refills",
+      "description": "Energy refills for event completion and grinding",
+      "estimatedCost": "Variable",
+      "costType": "Units",
+      "notes": "Spend energy on completion rather than exploration at first."
+    },
+    {
+      "rank": 3,
+      "category": "Mastery Adjustments",
+      "description": "Mastery resets and tweaks for different content",
+      "estimatedCost": "Variable",
+      "costType": "Units",
+      "notes": "Sigil gives free weekly reset. Worth the subscription."
+    },
+    {
+      "rank": 4,
+      "category": "Summoner Sigil",
+      "description": "Monthly subscription",
+      "estimatedCost": "Variable",
+      "costType": "USD",
+      "notes": "Best bang for buck. Bonuses stack up over time."
+    },
+    {
+      "rank": 5,
+      "category": "Nexus Crystals",
+      "description": "Nexus featured crystals when available",
+      "estimatedCost": 500,
+      "costType": "Units",
+      "notes": "Better than basic. Only buy when you need roster expansion."
+    },
+    {
+      "rank": 6,
+      "category": "Paragon/Titan Crystals",
+      "description": "Premium crystals for endgame players",
+      "estimatedCost": 300,
+      "costType": "Units",
+      "notes": "Good value for endgame. Skip if still building masteries."
+    },
+    {
+      "rank": 7,
+      "category": "Cavalier Crystals",
+      "description": "Mid-tier crystals",
+      "estimatedCost": 200,
+      "costType": "Units",
+      "notes": "OK value. Only worth for specific needs."
+    },
+    {
+      "rank": 8,
+      "category": "Grandmaster / Premium Crystals",
+      "description": "Basic crystals",
+      "estimatedCost": 100,
+      "costType": "Units",
+      "notes": "Poor value. Avoid spending units here."
+    },
+    {
+      "rank": 9,
+      "category": "Revives / Potions",
+      "description": "Items from the unit store",
+      "estimatedCost": "Variable",
+      "costType": "Units",
+      "notes": "Buy only when stuck on hard content. Not a regular purchase."
+    },
+    {
+      "rank": 10,
+      "category": "Featured Crystals",
+      "description": "Chasing specific featured champions",
+      "estimatedCost": "Variable",
+      "costType": "Units",
+      "notes": "Lowest priority. The chase is expensive and unreliable."
+    }
+  ]
+}

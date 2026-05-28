@@ -1,0 +1,340 @@
+{
+  "synergies": [
+    {
+      "champions": ["blade", "ghostRider", "starkEnhancedSpiderMan"],
+      "type": "team",
+      "name": "The Trinity",
+      "bonus": "Attack",
+      "description": "Blade gains +25% Attack. Ghost Rider and Stark Spidey gain +15% Attack."
+    },
+    {
+      "champions": ["magnetHox", "professorX", "whiteMagneto"],
+      "type": "team",
+      "name": "Houses of X",
+      "bonus": "Attack",
+      "description": "+5% Attack per Mutant on team. Magneto gains True Strike vs robots."
+    },
+    {
+      "champions": ["apocalypse", "cable", "archangel", "colossus", "sunspot"],
+      "type": "team",
+      "name": "Rise of the Horsemen",
+      "bonus": "Utility",
+      "description": "Apocalypse converts a random Mutant ally into a Horseman at fight start."
+    },
+    {
+      "champions": ["deadpoolX", "domino", "masacre"],
+      "type": "team",
+      "name": "Deadpool Family",
+      "bonus": "Attack",
+      "description": "+5% Critical Rate. Domino gains +15% Burn damage."
+    },
+    {
+      "champions": ["ghost", "wasp", "antman"],
+      "type": "team",
+      "name": "Ant-Family",
+      "bonus": "Utility",
+      "description": "Ghost gains +30% Phase duration. Wasp starts fight with 2 Evade charges."
+    },
+    {
+      "champions": ["nickFury", "captainAmericaIW", "blackWidowCI"],
+      "type": "team",
+      "name": "Secret Empire",
+      "bonus": "Attack",
+      "description": "+10% Attack for Skill champions. Nick Fury gains 1 additional LMD charge."
+    },
+    {
+      "champions": ["blade", "morbius", "elixir"],
+      "type": "team",
+      "name": "Midnight Sons",
+      "bonus": "Utility",
+      "description": "+15% Bleed damage. Blade's Danger Sense triggers against all Supernatural enemies."
+    },
+    {
+      "champions": ["doom", "kang", "immortus"],
+      "type": "team",
+      "name": "Council of Kangs",
+      "bonus": "Defense",
+      "description": "+15% Ability Accuracy. Doom starts with 2 bars of power."
+    },
+    {
+      "champions": ["hercules", "zeus", "ares"],
+      "type": "team",
+      "name": "Olympians",
+      "bonus": "Attack",
+      "description": "Hercules gains +1 Feat of Strength charge. +20% Fury potency."
+    },
+    {
+      "champions": ["knull", "carnage", "venom"],
+      "type": "team",
+      "name": "Symbiote Hive",
+      "bonus": "Attack",
+      "description": "+15% Attack. Symbiote champions gain +25% Buff steal chance."
+    },
+    {
+      "champions": ["angela", "hela", "thorRagnarok"],
+      "type": "team",
+      "name": "Asgardians",
+      "bonus": "Defense",
+      "description": "+10% Armor. Asgardians gain +1% Regen per Fury buff."
+    },
+    {
+      "champions": ["void", "sentry", "aegon"],
+      "type": "team",
+      "name": "The Void",
+      "bonus": "Utility",
+      "description": "Void converts an additional debuff per 5 hits in combo."
+    },
+    {
+      "champions": ["humanTorch", "misterFantastic", "invisibleWoman", "thing"],
+      "type": "team",
+      "name": "Fantastic Four",
+      "bonus": "Attack",
+      "description": "+5% Attack per alive F4 member. +25% if all 4 are alive."
+    },
+    {
+      "champions": ["colossus", "wolverine", "stormX", "nightcrawler", "beast"],
+      "type": "team",
+      "name": "X-Men Classic",
+      "bonus": "Defense",
+      "description": "+10% Health. X-Men gain +15% Armor."
+    },
+    {
+      "champions": ["corvusGlaive", "proximaMidnight", "heimdall"],
+      "type": "team",
+      "name": "Black Order",
+      "bonus": "Attack",
+      "description": "Corvus starts with 1 additional Glaive charge. Proxima gains +2 Pre-Fight charges."
+    },
+    {
+      "champions": ["kingpin", "taskmaster", "crossbones"],
+      "type": "team",
+      "name": "Thunderbolts",
+      "bonus": "Defense",
+      "description": "+12% Perfect Block chance. Kingpin shrugs off 1 additional debuff."
+    }
+  ],
+  "pairs": [
+    {
+      "championA": "deadpoolX",
+      "championB": "domino",
+      "type": "Attack",
+      "description": "+5% Critical Rate. Domino's Luck triggers 15% more often."
+    },
+    {
+      "championA": "domino",
+      "championB": "masacre",
+      "type": "Attack",
+      "description": "+5% Critical Damage. Domino's Incinerates deal +25% damage."
+    },
+    {
+      "championA": "ghost",
+      "championB": "wasp",
+      "type": "Utility",
+      "description": "+15% Phase duration. Ghost's Specials are Unblockable while Phased."
+    },
+    {
+      "championA": "blade",
+      "championB": "ghostRider",
+      "type": "Attack",
+      "description": "+15% Attack. Blade's Danger Sense activates against all Villains."
+    },
+    {
+      "championA": "blade",
+      "championB": "starkEnhancedSpiderMan",
+      "type": "Attack",
+      "description": "+10% Attack. Blade gains +15% Bleed damage."
+    },
+    {
+      "championA": "ghostRider",
+      "championB": "starkEnhancedSpiderMan",
+      "type": "Utility",
+      "description": "+10% Power Gain. Ghost Rider's Judgments deal +10% damage."
+    },
+    {
+      "championA": "apocalypse",
+      "championB": "cable",
+      "type": "Utility",
+      "description": "Cable starts as a Horseman. Apocalypse gains +15% Armor Break potency."
+    },
+    {
+      "championA": "magnetHox",
+      "championB": "whiteMagneto",
+      "type": "Attack",
+      "description": "+10% Attack. Both Magneto's gain +1 bar of starting power."
+    },
+    {
+      "championA": "professorX",
+      "championB": "magnetHox",
+      "type": "Utility",
+      "description": "+15% Ability Accuracy. Professor X gains Cerebral charges 20% faster."
+    },
+    {
+      "championA": "captainMarvelMovie",
+      "championB": "captainMarvel",
+      "type": "Attack",
+      "description": "+5% Attack for Cosmic champions."
+    },
+    {
+      "championA": "medusa",
+      "championB": "blackBolt",
+      "type": "Attack",
+      "description": "+10% Attack. Medusa's Armor Shatter lasts +2 seconds."
+    },
+    {
+      "championA": "karnak",
+      "championB": "blackBolt",
+      "type": "Utility",
+      "description": "+15% Perfect Block chance."
+    },
+    {
+      "championA": "corvusGlaive",
+      "championB": "proximaMidnight",
+      "type": "Attack",
+      "description": "Corvus starts with 1 Glaive Charge. +10% Critical Damage."
+    },
+    {
+      "championA": "proximaMidnight",
+      "championB": "heimdall",
+      "type": "Utility",
+      "description": "+10% Power Gain. Proxima's Pre-Fight missions expire 30% slower."
+    },
+    {
+      "championA": "hercules",
+      "championB": "odins",
+      "type": "Attack",
+      "description": "+15% Attack. Odin's Pre-Fights grant an additional buff to Hercules."
+    },
+    {
+      "championA": "hercules",
+      "championB": "zeus",
+      "type": "Attack",
+      "description": "Hercules gains +1 Feat of Strength charge cap."
+    },
+    {
+      "championA": "knull",
+      "championB": "venom",
+      "type": "Attack",
+      "description": "+15% Attack. Knull's Living Abyss triggers 20% more often."
+    },
+    {
+      "championA": "carnage",
+      "championB": "venom",
+      "type": "Attack",
+      "description": "+10% Bleed damage. Carnage gains +10% Fury potency."
+    },
+    {
+      "championA": "humanTorch",
+      "championB": "misterFantastic",
+      "type": "Attack",
+      "description": "+10% Incinerate damage. Torch gains +1 Nova Flame charge."
+    },
+    {
+      "championA": "thing",
+      "championB": "misterFantastic",
+      "type": "Defense",
+      "description": "+15% Armor. Thing gains an additional Stone charge."
+    },
+    {
+      "championA": "invisibleWoman",
+      "championB": "misterFantastic",
+      "type": "Defense",
+      "description": "+10% Health. Invisibility lasts +1 second."
+    },
+    {
+      "championA": "nickFury",
+      "championB": "blackWidowCI",
+      "type": "Attack",
+      "description": "+10% Attack. Nick Fury's LMD gains +20% Health."
+    },
+    {
+      "championA": "captainAmericaIW",
+      "championB": "ironManIW",
+      "type": "Defense",
+      "description": "+5% Armor per Tech/Skill ally on team."
+    },
+    {
+      "championA": "warlock",
+      "championB": "visionAarkus",
+      "type": "Utility",
+      "description": "+15% Power Drain potency. Both gain Tech Immunity."
+    },
+    {
+      "championA": "omegaSentinel",
+      "championB": "warlock",
+      "type": "Attack",
+      "description": "+10% Attack. Omega Sentinel's Analysis gains +1 stack."
+    },
+    {
+      "championA": "colossus",
+      "championB": "omegaRed",
+      "type": "Defense",
+      "description": "+15% Armor. Colossus gains bleed immunity 2 seconds faster."
+    },
+    {
+      "championA": "elixir",
+      "championB": "omegaRed",
+      "type": "Utility",
+      "description": "Omega Red's Death Spores deal +20% damage."
+    },
+    {
+      "championA": "sabretooth",
+      "championB": "wolverine",
+      "type": "Attack",
+      "description": "+5% Attack per Fury buff on each."
+    },
+    {
+      "championA": "bishop",
+      "championB": "emmaFrost",
+      "type": "Defense",
+      "description": "+10% Energy Resistance. Bishop starts with 1 Red charge."
+    },
+    {
+      "championA": "sunspot",
+      "championB": "cable",
+      "type": "Attack",
+      "description": "+10% Incinerate damage. Sunspot gains +1 Solar charge."
+    },
+    {
+      "championA": "longshot",
+      "championB": "domino",
+      "type": "Attack",
+      "description": "+5% Critical Rate. Longshot's Luck activates 10% more often."
+    },
+    {
+      "championA": "void",
+      "championB": "sentry",
+      "type": "Utility",
+      "description": "Void's debuffs last +2 seconds."
+    },
+    {
+      "championA": "hyperion",
+      "championB": "thorRagnarok",
+      "type": "Attack",
+      "description": "+10% Attack. Both gain +10% Fury potency."
+    },
+    {
+      "championA": "angela",
+      "championB": "hela",
+      "type": "Attack",
+      "description": "+10% Attack. Angela's Furies stack one additional time."
+    },
+    {
+      "championA": "kingpin",
+      "championB": "punisher",
+      "type": "Defense",
+      "description": "+10% Health. Kingpin's Overpower lasts +1 second."
+    },
+    {
+      "championA": "moleMan",
+      "championB": "prowler",
+      "type": "Attack",
+      "description": "+5% Critical Rate. Mole Man's Senses activate 20% faster."
+    },
+    {
+      "championA": "herod",
+      "championB": "groot",
+      "type": "Utility",
+      "description": "+10% Regen. Both gain +10% Health."
+    }
+  ]
+}

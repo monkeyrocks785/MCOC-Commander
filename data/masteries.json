@@ -1,0 +1,688 @@
+{
+  "trees": {
+    "offense": [
+      {
+        "id": "lesserPrecision",
+        "name": "Lesser Precision",
+        "tree": "offense",
+        "row": 1,
+        "col": "left",
+        "maxPoints": 3,
+        "costPerPoint": 1,
+        "prerequisites": [],
+        "requiredPoints": 0,
+        "statEffects": [
+          { "level": 1, "description": "+136 Critical Rating" },
+          { "level": 2, "description": "+188 Critical Rating" },
+          { "level": 3, "description": "+240 Critical Rating" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "lesserCruelty",
+        "name": "Lesser Cruelty",
+        "tree": "offense",
+        "row": 1,
+        "col": "right",
+        "maxPoints": 3,
+        "costPerPoint": 1,
+        "prerequisites": [],
+        "requiredPoints": 0,
+        "statEffects": [
+          { "level": 1, "description": "+99 Critical Damage Rating" },
+          { "level": 2, "description": "+162 Critical Damage Rating" },
+          { "level": 3, "description": "+225 Critical Damage Rating" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "precision",
+        "name": "Precision",
+        "tree": "offense",
+        "row": 2,
+        "col": "left",
+        "maxPoints": 3,
+        "costPerPoint": 2,
+        "prerequisites": ["lesserPrecision"],
+        "requiredPoints": 5,
+        "statEffects": [
+          { "level": 1, "description": "+370 Critical Rating" },
+          { "level": 2, "description": "+460 Critical Rating" },
+          { "level": 3, "description": "+550 Critical Rating" }
+        ],
+        "recommendedLevel": 3
+      },
+      {
+        "id": "cruelty",
+        "name": "Cruelty",
+        "tree": "offense",
+        "row": 2,
+        "col": "center",
+        "maxPoints": 3,
+        "costPerPoint": 2,
+        "prerequisites": ["lesserCruelty"],
+        "requiredPoints": 5,
+        "statEffects": [
+          { "level": 1, "description": "+285 Critical Damage Rating" },
+          { "level": 2, "description": "+365 Critical Damage Rating" },
+          { "level": 3, "description": "+445 Critical Damage Rating" }
+        ],
+        "recommendedLevel": 3
+      },
+      {
+        "id": "greaterPrecision",
+        "name": "Greater Precision",
+        "tree": "offense",
+        "row": 2,
+        "col": "right",
+        "maxPoints": 3,
+        "costPerPoint": 2,
+        "prerequisites": ["precision"],
+        "requiredPoints": 5,
+        "statEffects": [
+          { "level": 1, "description": "+480 Critical Rating" },
+          { "level": 2, "description": "+600 Critical Rating" },
+          { "level": 3, "description": "+720 Critical Rating" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "greaterCruelty",
+        "name": "Greater Cruelty",
+        "tree": "offense",
+        "row": 3,
+        "col": "left",
+        "maxPoints": 3,
+        "costPerPoint": 2,
+        "prerequisites": ["cruelty"],
+        "requiredPoints": 10,
+        "statEffects": [
+          { "level": 1, "description": "+375 Critical Damage Rating" },
+          { "level": 2, "description": "+480 Critical Damage Rating" },
+          { "level": 3, "description": "+585 Critical Damage Rating" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "lesserCritical",
+        "name": "Lesser Critical",
+        "tree": "offense",
+        "row": 3,
+        "col": "center",
+        "maxPoints": 3,
+        "costPerPoint": 2,
+        "prerequisites": ["greaterPrecision"],
+        "requiredPoints": 10,
+        "statEffects": [
+          { "level": 1, "description": "+0.03 Critical Hit Fraction" },
+          { "level": 2, "description": "+0.04 Critical Hit Fraction" },
+          { "level": 3, "description": "+0.05 Critical Hit Fraction" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "critical",
+        "name": "Critical",
+        "tree": "offense",
+        "row": 3,
+        "col": "right",
+        "maxPoints": 3,
+        "costPerPoint": 2,
+        "prerequisites": ["lesserCritical"],
+        "requiredPoints": 10,
+        "statEffects": [
+          { "level": 1, "description": "+0.04 Critical Hit Fraction" },
+          { "level": 2, "description": "+0.06 Critical Hit Fraction" },
+          { "level": 3, "description": "+0.08 Critical Hit Fraction" }
+        ],
+        "recommendedLevel": 3
+      },
+      {
+        "id": "deepWounds",
+        "name": "Deep Wounds",
+        "tree": "offense",
+        "row": 4,
+        "col": "left",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["greaterCruelty"],
+        "requiredPoints": 15,
+        "statEffects": [
+          { "level": 1, "description": "+15% Bleed Damage" },
+          { "level": 2, "description": "+30% Bleed Damage" },
+          { "level": 3, "description": "+45% Bleed Damage" }
+        ],
+        "recommendedLevel": 3
+      },
+      {
+        "id": "assault",
+        "name": "Assault",
+        "tree": "offense",
+        "row": 4,
+        "col": "center",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["critical"],
+        "requiredPoints": 15,
+        "statEffects": [
+          { "level": 1, "description": "+150 Critical Damage Rating, +6% Armor Penetration" },
+          { "level": 2, "description": "+300 Critical Damage Rating, +12% Armor Penetration" },
+          { "level": 3, "description": "+450 Critical Damage Rating, +18% Armor Penetration" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "greaterCritical",
+        "name": "Greater Critical",
+        "tree": "offense",
+        "row": 4,
+        "col": "right",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["critical"],
+        "requiredPoints": 15,
+        "statEffects": [
+          { "level": 1, "description": "+0.05 Critical Hit Fraction" },
+          { "level": 2, "description": "+0.07 Critical Hit Fraction" },
+          { "level": 3, "description": "+0.09 Critical Hit Fraction" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "expose",
+        "name": "Expose",
+        "tree": "offense",
+        "row": 5,
+        "col": "left",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["deepWounds"],
+        "requiredPoints": 20,
+        "statEffects": [
+          { "level": 1, "description": "25% chance to reduce Physical Resistance by 620 on crit" },
+          { "level": 2, "description": "32% chance to reduce Physical Resistance by 620 on crit" },
+          { "level": 3, "description": "40% chance to reduce Physical Resistance by 620 on crit" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "pierce",
+        "name": "Pierce",
+        "tree": "offense",
+        "row": 5,
+        "col": "right",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["greaterCritical"],
+        "requiredPoints": 20,
+        "statEffects": [
+          { "level": 1, "description": "Ignores 150 Armor" },
+          { "level": 2, "description": "Ignores 300 Armor" },
+          { "level": 3, "description": "Ignores 450 Armor" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "glassCannon",
+        "name": "Glass Cannon",
+        "tree": "offense",
+        "row": 6,
+        "col": "center",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["assault"],
+        "requiredPoints": 25,
+        "statEffects": [
+          { "level": 1, "description": "+5% Attack, -1% Health" },
+          { "level": 2, "description": "+10% Attack, -2% Health" },
+          { "level": 3, "description": "+15% Attack, -3% Health" }
+        ],
+        "recommendedLevel": 0
+      }
+    ],
+    "defense": [
+      {
+        "id": "lesserBlock",
+        "name": "Lesser Block Proficiency",
+        "tree": "defense",
+        "row": 1,
+        "col": "left",
+        "maxPoints": 3,
+        "costPerPoint": 1,
+        "prerequisites": [],
+        "requiredPoints": 0,
+        "statEffects": [
+          { "level": 1, "description": "+3% Block Proficiency" },
+          { "level": 2, "description": "+4% Block Proficiency" },
+          { "level": 3, "description": "+5% Block Proficiency" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "lesserVitality",
+        "name": "Lesser Vitality",
+        "tree": "defense",
+        "row": 1,
+        "col": "right",
+        "maxPoints": 3,
+        "costPerPoint": 1,
+        "prerequisites": [],
+        "requiredPoints": 0,
+        "statEffects": [
+          { "level": 1, "description": "+2.8% Health" },
+          { "level": 2, "description": "+3.5% Health" },
+          { "level": 3, "description": "+4.2% Health" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "blockProficiency",
+        "name": "Block Proficiency",
+        "tree": "defense",
+        "row": 2,
+        "col": "left",
+        "maxPoints": 3,
+        "costPerPoint": 2,
+        "prerequisites": ["lesserBlock"],
+        "requiredPoints": 5,
+        "statEffects": [
+          { "level": 1, "description": "+5% Block Proficiency" },
+          { "level": 2, "description": "+7% Block Proficiency" },
+          { "level": 3, "description": "+9% Block Proficiency" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "perfectBlock",
+        "name": "Perfect Block",
+        "tree": "defense",
+        "row": 2,
+        "col": "center",
+        "maxPoints": 3,
+        "costPerPoint": 2,
+        "prerequisites": ["lesserBlock"],
+        "requiredPoints": 5,
+        "statEffects": [
+          { "level": 1, "description": "+2% Perfect Block Chance" },
+          { "level": 2, "description": "+4% Perfect Block Chance" },
+          { "level": 3, "description": "+6% Perfect Block Chance" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "greaterBlock",
+        "name": "Greater Block Proficiency",
+        "tree": "defense",
+        "row": 2,
+        "col": "right",
+        "maxPoints": 3,
+        "costPerPoint": 2,
+        "prerequisites": ["blockProficiency"],
+        "requiredPoints": 5,
+        "statEffects": [
+          { "level": 1, "description": "+6% Block Proficiency" },
+          { "level": 2, "description": "+8% Block Proficiency" },
+          { "level": 3, "description": "+10% Block Proficiency" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "vigor",
+        "name": "Vigor",
+        "tree": "defense",
+        "row": 3,
+        "col": "left",
+        "maxPoints": 3,
+        "costPerPoint": 2,
+        "prerequisites": ["perfectBlock"],
+        "requiredPoints": 10,
+        "statEffects": [
+          { "level": 1, "description": "+3.6% Health" },
+          { "level": 2, "description": "+4.6% Health" },
+          { "level": 3, "description": "+5.6% Health" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "salve",
+        "name": "Salve",
+        "tree": "defense",
+        "row": 3,
+        "col": "center",
+        "maxPoints": 3,
+        "costPerPoint": 2,
+        "prerequisites": ["greaterBlock"],
+        "requiredPoints": 10,
+        "statEffects": [
+          { "level": 1, "description": "+0.26 Regen per second" },
+          { "level": 2, "description": "+0.34 Regen per second" },
+          { "level": 3, "description": "+0.42 Regen per second" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "greaterVitality",
+        "name": "Greater Vitality",
+        "tree": "defense",
+        "row": 3,
+        "col": "right",
+        "maxPoints": 3,
+        "costPerPoint": 2,
+        "prerequisites": ["lesserVitality"],
+        "requiredPoints": 10,
+        "statEffects": [
+          { "level": 1, "description": "+4.8% Health" },
+          { "level": 2, "description": "+6.0% Health" },
+          { "level": 3, "description": "+7.2% Health" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "physicalResist",
+        "name": "Physical Resistance",
+        "tree": "defense",
+        "row": 4,
+        "col": "left",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["vigor"],
+        "requiredPoints": 15,
+        "statEffects": [
+          { "level": 1, "description": "+5.4% Physical Resistance" },
+          { "level": 2, "description": "+7.0% Physical Resistance" },
+          { "level": 3, "description": "+8.6% Physical Resistance" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "energyResist",
+        "name": "Energy Resistance",
+        "tree": "defense",
+        "row": 4,
+        "col": "center",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["greaterVitality"],
+        "requiredPoints": 15,
+        "statEffects": [
+          { "level": 1, "description": "+5.4% Energy Resistance" },
+          { "level": 2, "description": "+7.0% Energy Resistance" },
+          { "level": 3, "description": "+8.6% Energy Resistance" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "thorns",
+        "name": "Thorns",
+        "tree": "defense",
+        "row": 4,
+        "col": "right",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["greaterVitality"],
+        "requiredPoints": 15,
+        "statEffects": [
+          { "level": 1, "description": "Reflects 5% Physical damage back at attacker" },
+          { "level": 2, "description": "Reflects 7% Physical damage back at attacker" },
+          { "level": 3, "description": "Reflects 10% Physical damage back at attacker" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "inequity",
+        "name": "Inequity",
+        "tree": "defense",
+        "row": 5,
+        "col": "left",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["physicalResist"],
+        "requiredPoints": 20,
+        "statEffects": [
+          { "level": 1, "description": "-3% Attack per debuff on enemy (max 3)" },
+          { "level": 2, "description": "-5% Attack per debuff on enemy (max 3)" },
+          { "level": 3, "description": "-7% Attack per debuff on enemy (max 3)" }
+        ],
+        "recommendedLevel": 3
+      },
+      {
+        "id": "resilience",
+        "name": "Resilience",
+        "tree": "defense",
+        "row": 5,
+        "col": "right",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["energyResist"],
+        "requiredPoints": 20,
+        "statEffects": [
+          { "level": 1, "description": "+3% Crit Resistance" },
+          { "level": 2, "description": "+5% Crit Resistance" },
+          { "level": 3, "description": "+7% Crit Resistance" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "indestructible",
+        "name": "Indestructible",
+        "tree": "defense",
+        "row": 6,
+        "col": "center",
+        "maxPoints": 1,
+        "costPerPoint": 4,
+        "prerequisites": ["thorns"],
+        "requiredPoints": 25,
+        "statEffects": [
+          { "level": 1, "description": "Once per fight: become indestructible for 2.5s when below 12.5% HP" }
+        ],
+        "recommendedLevel": 0
+      }
+    ],
+    "proficiency": [
+      {
+        "id": "lesserRecovery",
+        "name": "Lesser Recovery",
+        "tree": "proficiency",
+        "row": 1,
+        "col": "left",
+        "maxPoints": 3,
+        "costPerPoint": 1,
+        "prerequisites": [],
+        "requiredPoints": 0,
+        "statEffects": [
+          { "level": 1, "description": "+10% Healing" },
+          { "level": 2, "description": "+12% Healing" },
+          { "level": 3, "description": "+15% Healing" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "stupefy",
+        "name": "Stupefy",
+        "tree": "proficiency",
+        "row": 1,
+        "col": "right",
+        "maxPoints": 3,
+        "costPerPoint": 1,
+        "prerequisites": [],
+        "requiredPoints": 0,
+        "statEffects": [
+          { "level": 1, "description": "+0.5s Stun Duration" },
+          { "level": 2, "description": "+0.75s Stun Duration" },
+          { "level": 3, "description": "+1.0s Stun Duration" }
+        ],
+        "recommendedLevel": 3
+      },
+      {
+        "id": "recovery",
+        "name": "Recovery",
+        "tree": "proficiency",
+        "row": 2,
+        "col": "left",
+        "maxPoints": 3,
+        "costPerPoint": 2,
+        "prerequisites": ["lesserRecovery"],
+        "requiredPoints": 5,
+        "statEffects": [
+          { "level": 1, "description": "+15% Healing + Regen" },
+          { "level": 2, "description": "+20% Healing + Regen" },
+          { "level": 3, "description": "+25% Healing + Regen" }
+        ],
+        "recommendedLevel": 3
+      },
+      {
+        "id": "willpower",
+        "name": "Willpower",
+        "tree": "proficiency",
+        "row": 2,
+        "col": "center",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["recovery"],
+        "requiredPoints": 5,
+        "statEffects": [
+          { "level": 1, "description": "Regen 0.18% HP/sec per debuff" },
+          { "level": 2, "description": "Regen 0.24% HP/sec per debuff" },
+          { "level": 3, "description": "Regen 0.30% HP/sec per debuff" }
+        ],
+        "recommendedLevel": 3
+      },
+      {
+        "id": "greaterRecovery",
+        "name": "Greater Recovery",
+        "tree": "proficiency",
+        "row": 2,
+        "col": "right",
+        "maxPoints": 3,
+        "costPerPoint": 2,
+        "prerequisites": ["recovery"],
+        "requiredPoints": 5,
+        "statEffects": [
+          { "level": 1, "description": "+12% Healing + Regen" },
+          { "level": 2, "description": "+18% Healing + Regen" },
+          { "level": 3, "description": "+24% Healing + Regen" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "mysticDispersion",
+        "name": "Mystic Dispersion",
+        "tree": "proficiency",
+        "row": 3,
+        "col": "left",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["willpower"],
+        "requiredPoints": 10,
+        "statEffects": [
+          { "level": 1, "description": "+15% Power per buff expiration" },
+          { "level": 2, "description": "+25% Power per buff expiration" },
+          { "level": 3, "description": "+35% Power per buff expiration" }
+        ],
+        "recommendedLevel": 3
+      },
+      {
+        "id": "pacify",
+        "name": "Pacify",
+        "tree": "proficiency",
+        "row": 3,
+        "col": "center",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["willpower"],
+        "requiredPoints": 10,
+        "statEffects": [
+          { "level": 1, "description": "-15% Ability Accuracy when stunned" },
+          { "level": 2, "description": "-25% Ability Accuracy when stunned" },
+          { "level": 3, "description": "-35% Ability Accuracy when stunned" }
+        ],
+        "recommendedLevel": 3
+      },
+      {
+        "id": "petrify",
+        "name": "Petrify",
+        "tree": "proficiency",
+        "row": 3,
+        "col": "right",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["greaterRecovery"],
+        "requiredPoints": 10,
+        "statEffects": [
+          { "level": 1, "description": "-10% Regen when stunned, -5% Power Gain when stunned" },
+          { "level": 2, "description": "-15% Regen when stunned, -8% Power Gain when stunned" },
+          { "level": 3, "description": "-20% Regen when stunned, -10% Power Gain when stunned" }
+        ],
+        "recommendedLevel": 3
+      },
+      {
+        "id": "despair",
+        "name": "Despair",
+        "tree": "proficiency",
+        "row": 4,
+        "col": "left",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["mysticDispersion"],
+        "requiredPoints": 15,
+        "statEffects": [
+          { "level": 1, "description": "-15% Healing per debuff (max 3)" },
+          { "level": 2, "description": "-20% Healing per debuff (max 3)" },
+          { "level": 3, "description": "-30% Healing per debuff (max 3)" }
+        ],
+        "recommendedLevel": 3
+      },
+      {
+        "id": "resonate",
+        "name": "Resonate",
+        "tree": "proficiency",
+        "row": 4,
+        "col": "center",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["pacify"],
+        "requiredPoints": 15,
+        "statEffects": [
+          { "level": 1, "description": "20% chance to inflict a 510 Armor Break for 8s on hit" },
+          { "level": 2, "description": "28% chance to inflict a 510 Armor Break for 8s on hit" },
+          { "level": 3, "description": "35% chance to inflict a 510 Armor Break for 8s on hit" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "unleash",
+        "name": "Unleash",
+        "tree": "proficiency",
+        "row": 4,
+        "col": "right",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["petrify"],
+        "requiredPoints": 15,
+        "statEffects": [
+          { "level": 1, "description": "+0.2s Stun Duration" },
+          { "level": 2, "description": "+0.4s Stun Duration" },
+          { "level": 3, "description": "+0.6s Stun Duration" }
+        ],
+        "recommendedLevel": 0
+      },
+      {
+        "id": "mysticWard",
+        "name": "Mystic Ward",
+        "tree": "proficiency",
+        "row": 5,
+        "col": "center",
+        "maxPoints": 3,
+        "costPerPoint": 3,
+        "prerequisites": ["resonate"],
+        "requiredPoints": 20,
+        "statEffects": [
+          { "level": 1, "description": "-8% Mystic Ability Accuracy" },
+          { "level": 2, "description": "-12% Mystic Ability Accuracy" },
+          { "level": 3, "description": "-16% Mystic Ability Accuracy" }
+        ],
+        "recommendedLevel": 0
+      }
+    ]
+  }
+}

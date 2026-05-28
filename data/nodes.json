@@ -1,0 +1,436 @@
+{
+  "nodes": [
+    {
+      "id": "biohazard",
+      "name": "Biohazard",
+      "type": "Global",
+      "description": "Attacker suffers Poison damage when striking a defender with a Bleed debuff active. Defender suffers Bleed damage when striking an attacker with a Poison debuff active.",
+      "difficulty": "Hard",
+      "counters": {
+        "abilities": ["Poison Immunity", "Bleed Immunity"],
+        "champions": ["warlock", "omegaRed", "kingGroot", "colossus", "visionAarkus", "ultron"],
+        "tips": "Use champions immune to both Bleed and Poison, or avoid triggering debuffs."
+      }
+    },
+    {
+      "id": "buffet",
+      "name": "Buffet",
+      "type": "Node",
+      "description": "When a Buff expires on the defender, they degenerate the attacker for 1% of their max health per stack.",
+      "difficulty": "Hard",
+      "counters": {
+        "abilities": ["Passive Buffs", "Debuff Focus"],
+        "champions": ["void", "aegon", "onslaught", "doctorDoom"],
+        "tips": "Use champions that don't rely on buffs, or convert enemy buffs into debuffs."
+      }
+    },
+    {
+      "id": "powerShield",
+      "name": "Power Shield",
+      "type": "Node",
+      "description": "While the defender has any Power, they take 80% reduced damage. Remove their Power to deal normal damage.",
+      "difficulty": "Hard",
+      "counters": {
+        "abilities": ["Power Drain", "Power Burn", "Power Lock"],
+        "champions": ["warlock", "doctorDoom", "visionAarkus", "mysterio", "ebonyMaw"],
+        "tips": "Bring strong power control champions. Power Burn is the most effective counter."
+      }
+    },
+    {
+      "id": "stunImmunity",
+      "name": "Stun Immunity",
+      "type": "Global",
+      "description": "The defender cannot be stunned. Any attempt to stun them triggers a burst of degeneration.",
+      "difficulty": "Medium",
+      "counters": {
+        "abilities": ["Non-stun damage"],
+        "champions": ["ghost", "quicksilver", "void", "omegaSentinel"],
+        "tips": "Avoid relying on stun-heavy rotations. Use damage-over-time champions."
+      }
+    },
+    {
+      "id": "masochism",
+      "name": "Masochism",
+      "type": "Node",
+      "description": "When a non-damaging debuff is placed on the defender, they shrug it off and regenerate a small amount of health.",
+      "difficulty": "Hard",
+      "counters": {
+        "abilities": ["Damaging Debuffs Only", "Buff Prevention"],
+        "champions": ["archangel", "domino", "warlock", "hulkling"],
+        "tips": "Use damaging debuffs (Bleed, Poison, Shock, Incinerate) rather than non-damaging ones (Armor Break, Stun, Weakness)."
+      }
+    },
+    {
+      "id": "aspectOfWar",
+      "name": "Aspect of War",
+      "type": "Global",
+      "description": "Both players start the fight with a timer. If the fight goes past the timer, you are instantly defeated. Intercepting the opponent pauses the timer.",
+      "difficulty": "Hard",
+      "counters": {
+        "abilities": ["Aggressive Play", "Intercepting"],
+        "champions": ["aegon", "nickFury", "corvusGlaive"],
+        "tips": "Master intercepting. Aggressive playstyles counter this node best."
+      }
+    },
+    {
+      "id": "aspectOfNightmare",
+      "name": "Aspect of Nightmare",
+      "type": "Node",
+      "description": "While defender is not stunned, striking them with a light or medium attack has a chance to reverse controls for 3 seconds.",
+      "difficulty": "Hard",
+      "counters": {
+        "abilities": ["Stun Focus"],
+        "champions": ["spiderManStealth", "quake", "humanTorch"],
+        "tips": "Keep the defender stunned. Heavy attacks and specials bypass the reversal chance."
+      }
+    },
+    {
+      "id": "poison",
+      "name": "Poison",
+      "type": "Global",
+      "description": "All attacks have a chance to inflict Poison debuffs that deal X damage per second.",
+      "difficulty": "Medium",
+      "counters": {
+        "abilities": ["Poison Immunity"],
+        "champions": ["kingGroot", "omegaRed", "warlock", "ultron", "angela", "diablo"],
+        "tips": "Poison immune champions are the hard counter."
+      }
+    },
+    {
+      "id": "bleed",
+      "name": "Bleed",
+      "type": "Global",
+      "description": "All attacks have a chance to inflict Bleed debuffs that deal X damage per second.",
+      "difficulty": "Easy",
+      "counters": {
+        "abilities": ["Bleed Immunity"],
+        "champions": ["colossus", "kingGroot", "omegaRed", "ultron", "groot", "warlock"],
+        "tips": "Bleed immune champions trivialize this node."
+      }
+    },
+    {
+      "id": "incinerate",
+      "name": "Incinerate",
+      "type": "Global",
+      "description": "All attacks have a chance to inflict Incinerate debuffs that deal X damage per second.",
+      "difficulty": "Medium",
+      "counters": {
+        "abilities": ["Incinerate Immunity"],
+        "champions": ["humanTorch", "diablo", "colossus", "mephisto", "iceman", "dragonMan"],
+        "tips": "Incinerate immune champions counter this node."
+      }
+    },
+    {
+      "id": "coldSnap",
+      "name": "Cold Snap",
+      "type": "Global",
+      "description": "Inflicts Cold Snap debuffs. Champions not immune to Cold take damage over time and have reduced Ability Accuracy.",
+      "difficulty": "Medium",
+      "counters": {
+        "abilities": ["Cold Immunity"],
+        "champions": ["iceman", "colossus", "silverSurfer", "visionAarkus"],
+        "tips": "Cold immunity is a hard counter. Iceman and Colossus both have it."
+      }
+    },
+    {
+      "id": "shock",
+      "name": "Shock",
+      "type": "Global",
+      "description": "All attacks have a chance to inflict Shock debuffs.",
+      "difficulty": "Easy",
+      "counters": {
+        "abilities": ["Shock Immunity"],
+        "champions": ["nebula", "omegaSentinel", "ultron", "thor", "spiderMan2099", "yellowjacket", "janeFoster"],
+        "tips": "Shock immune champions counter this node."
+      }
+    },
+    {
+      "id": "void",
+      "name": "Void",
+      "type": "Node",
+      "description": "The defender has 500% increased health. They cannot have their power reduced below one bar.",
+      "difficulty": "Hard",
+      "counters": {
+        "abilities": ["Heal Block", "High Damage"],
+        "champions": ["archangel", "aegon", "corvusGlaive", "ghost"],
+        "tips": "Champions with lots of ramp-up damage do well. Avoid power control as it won't work."
+      }
+    },
+    {
+      "id": "node30",
+      "name": "Node 30",
+      "type": "Node",
+      "description": "This node contains a very difficult defender. Defeating them grants you a permanent boost for the rest of the quest.",
+      "difficulty": "Hard",
+      "counters": {
+        "abilities": ["All Utility"],
+        "champions": [],
+        "tips": "Save your best champion for this fight. Plan your path around it."
+      }
+    },
+    {
+      "id": "spite",
+      "name": "Spite",
+      "type": "Node",
+      "description": "When the defender has a debuff removed or expires, they gain a stack of Spite, increasing their attack rating.",
+      "difficulty": "Medium",
+      "counters": {
+        "abilities": ["Debuff Reduction", "Passive Debuffs"],
+        "champions": ["void", "doctorDoom", "kingpin"],
+        "tips": "Avoid placing many short-duration debuffs. Convert buffs rather than placing debuffs."
+      }
+    },
+    {
+      "id": "powerReserve1",
+      "name": "Power Reserve 1",
+      "type": "Node",
+      "description": "The defender starts the fight with 1 bar of power.",
+      "difficulty": "Easy",
+      "counters": {
+        "abilities": ["Power Control"],
+        "champions": ["warlock", "doctorDoom", "visionAarkus"],
+        "tips": "Drain or burn their starting power immediately."
+      }
+    },
+    {
+      "id": "powerReserve2",
+      "name": "Power Reserve 2",
+      "type": "Node",
+      "description": "The defender starts the fight with 2 bars of power.",
+      "difficulty": "Medium",
+      "counters": {
+        "abilities": ["Power Control", "Evade"],
+        "champions": ["warlock", "doctorDoom", "ghost", "quicksilver"],
+        "tips": "Important to drain or avoid their specials. Can one-shot you."
+      }
+    },
+    {
+      "id": "powerReserve3",
+      "name": "Power Reserve 3",
+      "type": "Node",
+      "description": "The defender starts the fight with 3 bars of power.",
+      "difficulty": "Hard",
+      "counters": {
+        "abilities": ["Power Drain", "Power Burn", "Evade + Dexterity"],
+        "champions": ["warlock", "doctorDoom", "ghost", "quicksilver"],
+        "tips": "The defender will almost certainly use SP3 immediately. Dexterity timing is critical."
+      }
+    },
+    {
+      "id": "regen",
+      "name": "Regeneration",
+      "type": "Node",
+      "description": "The defender regenerates X% health every 5 seconds.",
+      "difficulty": "Medium",
+      "counters": {
+        "abilities": ["Heal Block", "Petrify", "Despair"],
+        "champions": ["void", "archangel", "doctorDoom", "warlock", "baronZemo"],
+        "tips": "Heal reversal or heal block abilities are essential."
+      }
+    },
+    {
+      "id": "armor",
+      "name": "Armor Up",
+      "type": "Node",
+      "description": "The defender periodically gains Armor Up buffs, reducing physical damage taken.",
+      "difficulty": "Easy",
+      "counters": {
+        "abilities": ["Armor Break", "Armor Shatter", "Energy Damage"],
+        "champions": ["corvusGlaive", "medusa", "thorRagnarok", "onslaught"],
+        "tips": "Armor break or energy damage cuts through this node."
+      }
+    },
+    {
+      "id": "evade",
+      "name": "Evade",
+      "type": "Global",
+      "description": "The defender has a chance to evade attacks. Evade chance increases with defender's health loss.",
+      "difficulty": "Medium",
+      "counters": {
+        "abilities": ["True Strike", "Undexterable"],
+        "champions": ["corvusGlaive", "heimdall", "nickFury", "kingpin", "proximaMidnight", "falcon"],
+        "tips": "True Strike completely counters evade. Heimdall and Corvus are excellent choices."
+      }
+    },
+    {
+      "id": "autoBlock",
+      "name": "Auto-Block",
+      "type": "Node",
+      "description": "The defender has a chance to automatically block incoming attacks.",
+      "difficulty": "Medium",
+      "counters": {
+        "abilities": ["True Strike", "Unblockable Attacks"],
+        "champions": ["corvusGlaive", "falcon", "proximaMidnight"],
+        "tips": "True Strike and Lock-On counter auto-block."
+      }
+    },
+    {
+      "id": "unblockable",
+      "name": "Unblockable Specials",
+      "type": "Node",
+      "description": "The defender's special attacks are unblockable.",
+      "difficulty": "Medium",
+      "counters": {
+        "abilities": ["Dexterity", "Evade", "Miss"],
+        "champions": ["ghost", "quicksilver", "nightcrawler"],
+        "tips": "Must be evaded or avoided. Dexterity and phasing are your best friends."
+      }
+    },
+    {
+      "id": "degen",
+      "name": "Degeneration",
+      "type": "Global",
+      "description": "Both players degenerate X% health per second. Fighting aggressively reduces degeneration rate.",
+      "difficulty": "Medium",
+      "counters": {
+        "abilities": ["Regen", "Willpower", "Health Steal"],
+        "champions": ["wolverineX23", "ghostRider", "blade", "hyperion"],
+        "tips": "Regen-heavy champions or Willpower mastery can offset the degeneration."
+      }
+    },
+    {
+      "id": "roff",
+      "name": "ROFF (Reverse of Fate)",
+      "type": "Node",
+      "description": "All healing effects become degeneration. All degeneration effects become healing. Buffs and debuffs swap polarity.",
+      "difficulty": "Hard",
+      "counters": {
+        "abilities": ["Neutral Damage"],
+        "champions": ["ghost", "onslaught", "hulkling", "quake"],
+        "tips": "Avoid using regen or degen effects. Pure damage champions work best."
+      }
+    },
+    {
+      "id": "limbo",
+      "name": "Limbo",
+      "type": "Node",
+      "description": "Every 15 hits in the defender's combo, they gain a Limbo charge. When the Limbo expires, the attacker takes burst damage.",
+      "difficulty": "Hard",
+      "counters": {
+        "abilities": ["Nullify", "Fate Seal"],
+        "champions": ["doctorDoom", "blackWidowCI", "chavez", "mystic champions"],
+        "tips": "Nullify or Fate Seal the Limbo charges before they expire."
+      }
+    },
+    {
+      "id": "flux",
+      "name": "Flux",
+      "type": "Node",
+      "description": "The defender applies a passive Flux debuff. Flux Armor reduces physical damage while Flux Shield reduces energy damage. Switches every 10 seconds.",
+      "difficulty": "Medium",
+      "counters": {
+        "abilities": ["Mixed Damage"],
+        "champions": ["omegaSentinel", "warlock", "ghost"],
+        "tips": "Use champions that deal both physical and energy damage, or wait for the flux to switch."
+      }
+    },
+    {
+      "id": "caltrops",
+      "name": "Caltrops",
+      "type": "Node",
+      "description": "Dashing back causes the attacker to suffer a Bleed debuff. Dashing forward and striking the defender applies a passive Armor Break.",
+      "difficulty": "Medium",
+      "counters": {
+        "abilities": ["Bleed Immunity", "Aggressive Play"],
+        "champions": ["colossus", "kingGroot", "omegaRed", "warlock"],
+        "tips": "Minimize dashing back. Aggressive play and bleeds-immune champs help."
+      }
+    },
+    {
+      "id": "toxicPustules",
+      "name": "Toxic Pustules",
+      "type": "Node",
+      "description": "When a buff expires on either player, they suffer a Poison debuff. When a debuff expires on either player, they suffer a Bleed debuff.",
+      "difficulty": "Hard",
+      "counters": {
+        "abilities": ["Bleed + Poison Immunity"],
+        "champions": ["colossus", "warlock", "kingGroot", "ultron"],
+        "tips": "Dual immunity champions are best here. Avoid placing short duration buffs/debuffs."
+      }
+    },
+    {
+      "id": "bubbleShield",
+      "name": "Bubble Shield",
+      "type": "Node",
+      "description": "The defender periodically activates a Bubble Shield that absorbs all damage for 3 seconds. Only heavy attacks can break the shield.",
+      "difficulty": "Medium",
+      "counters": {
+        "abilities": ["Heavy Attack Focus"],
+        "champions": ["quake", "dragonMan", "hulk"],
+        "tips": "Use heavy attacks to break the bubble. Champions with heavy attack utility shine."
+      }
+    },
+    {
+      "id": "lifeTransfer",
+      "name": "Life Transfer",
+      "type": "Node",
+      "description": "Every time the defender loses 5% health, the attacker loses 1% health. Regeneration effects are shared.",
+      "difficulty": "Medium",
+      "counters": {
+        "abilities": ["Damage Control", "Regen"],
+        "champions": ["void", "wolverineX23", "kingGroot", "hyperion"],
+        "tips": "Regen helps offset the life transfer damage. Burst damage minimizes exposure."
+      }
+    },
+    {
+      "id": "stunReflect",
+      "name": "Stun Reflect",
+      "type": "Node",
+      "description": "Any attempt to stun the defender reflects the stun back onto the attacker.",
+      "difficulty": "Hard",
+      "counters": {
+        "abilities": ["Non-stun Damage"],
+        "champions": ["ghost", "corvusGlaive", "aegon", "omegaSentinel"],
+        "tips": "Avoid using stun-based rotations. Focus on DOT or direct damage champions."
+      }
+    },
+    {
+      "id": "fallingDamage",
+      "name": "Falling Damage",
+      "type": "Node",
+      "description": "When the defender is knocked down (e.g., from a heavy attack or SP3), their fall forces the attacker to take X% damage.",
+      "difficulty": "Medium",
+      "counters": {
+        "abilities": ["Avoid Knockdowns"],
+        "champions": ["ghost", "quake", "iveSpider"],
+        "tips": "Avoid knocking the defender down. Use DOT champs that don't require knockdowns."
+      }
+    },
+    {
+      "id": "powerLock",
+      "name": "Power Lock",
+      "type": "Global",
+      "description": "Both players cannot gain power for the first 10 seconds of the fight.",
+      "difficulty": "Easy",
+      "counters": {
+        "abilities": ["Basic Attacks"],
+        "champions": [],
+        "tips": "Focus on basic attack damage for the first 10 seconds."
+      }
+    },
+    {
+      "id": "kick",
+      "name": "Kick",
+      "type": "Node",
+      "description": "When the attacker triggers a special attack, the defender kicks them for X% damage.",
+      "difficulty": "Medium",
+      "counters": {
+        "abilities": ["Basic Attack Focus"],
+        "champions": ["aegon", "gwenpool", "starLord"],
+        "tips": "Use basic attacks and heavy attacks. Avoid specials or use them sparingly."
+      }
+    },
+    {
+      "id": "os",
+      "name": "Oblivion (OS)",
+      "type": "Node",
+      "description": "Every 10 seconds, all buffs and debuffs on both players are removed and converted into burst damage to the player they were affecting.",
+      "difficulty": "Hard",
+      "counters": {
+        "abilities": ["Minimal Debuffs"],
+        "champions": ["hulkling", "onslaught", "ghost"],
+        "tips": "Use champions that don't rely on stacking many buffs or debuffs."
+      }
+    }
+  ]
+}
