@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+:root {
+  --marvel-red: #ED1D24;
+  --marvel-gold: #FFD700;
+  --marvel-dark: #1A1A2E;
+  --marvel-black: #0F0F1A;
+  --marvel-blue: #1565C0;
+  --marvel-white: #F5F5F5;
+  --marvel-gray: #2A2A3E;
+  --marvel-light-gray: #8A8A9E;
+
+  --class-mutant: #FFD700;
+  --class-tech: #00BCD4;
+  --class-skill: #4CAF50;
+  --class-science: #9C27B0;
+  --class-mystic: #E91E63;
+  --class-cosmic: #2196F3;
+
+  --tier-s-bg: linear-gradient(135deg, #FFD700, #FFA000);
+  --tier-a-bg: linear-gradient(135deg, #4CAF50, #2E7D32);
+  --tier-b-bg: linear-gradient(135deg, #2196F3, #1565C0);
+  --tier-c-bg: linear-gradient(135deg, #9E9E9E, #616161);
+  --tier-d-bg: linear-gradient(135deg, #F44336, #C62828);
+  --tier-s-color: #FFD700;
+  --tier-a-color: #4CAF50;
+  --tier-b-color: #2196F3;
+  --tier-c-color: #9E9E9E;
+  --tier-d-color: #F44336;
+
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: 16px;
+
+  --shadow-glow-red: 0 0 24px rgba(237, 29, 36, 0.35);
+  --shadow-glow-gold: 0 0 24px rgba(255, 215, 0, 0.35);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.2);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-nav: 0 2px 20px rgba(0, 0, 0, 0.3);
+
+  --nav-height: 64px;
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+}
+
+@theme inline {
+  --color-background: var(--marvel-black);
+  --color-foreground: var(--marvel-white);
+  --color-marvel-red: var(--marvel-red);
+  --color-marvel-gold: var(--marvel-gold);
+  --color-marvel-dark: var(--marvel-dark);
+  --color-marvel-black: var(--marvel-black);
+  --color-marvel-blue: var(--marvel-blue);
+  --color-marvel-white: var(--marvel-white);
+  --color-marvel-gray: var(--marvel-gray);
+  --color-marvel-light-gray: var(--marvel-light-gray);
+  --color-class-mutant: var(--class-mutant);
+  --color-class-tech: var(--class-tech);
+  --color-class-skill: var(--class-skill);
+  --color-class-science: var(--class-science);
+  --color-class-mystic: var(--class-mystic);
+  --color-class-cosmic: var(--class-cosmic);
+  --color-tier-s: var(--tier-s-color);
+  --color-tier-a: var(--tier-a-color);
+  --color-tier-b: var(--tier-b-color);
+  --color-tier-c: var(--tier-c-color);
+  --color-tier-d: var(--tier-d-color);
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Rajdhani", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--marvel-black);
+  color: var(--marvel-white);
+  min-height: 100vh;
+  font-family: var(--font-sans);
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.text-glow-red {
+  text-shadow: 0 0 20px rgba(237, 29, 36, 0.6), 0 0 40px rgba(237, 29, 36, 0.3);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 215, 0, 0.3);
+}
+
+.glow-red {
+  box-shadow: var(--shadow-glow-red);
+}
+
+.glow-gold {
+  box-shadow: var(--shadow-glow-gold);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--marvel-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--marvel-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--marvel-light-gray);
+}
