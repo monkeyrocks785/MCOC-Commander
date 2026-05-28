@@ -28,8 +28,8 @@
   --tier-c-color: #9E9E9E;
   --tier-d-color: #F44336;
 
-  --glass-bg: rgba(255, 255, 255, 0.06);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.08);
   --glass-blur: 16px;
 
   --shadow-glow-red: 0 0 24px rgba(237, 29, 36, 0.35);
@@ -80,30 +80,60 @@ body {
   color: var(--marvel-white);
   min-height: 100vh;
   font-family: var(--font-sans);
+  overflow-x: hidden;
 }
 
+/* ─── Glass Effects ─── */
 .glass {
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border: 1px solid var(--glass-border);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.glass:hover {
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .glass-strong {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(15, 15, 26, 0.7);
+  backdrop-filter: blur(24px) saturate(1.2);
+  -webkit-backdrop-filter: blur(24px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.glass-card {
+  background: rgba(26, 26, 46, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all var(--transition-normal);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+/* ─── Text Effects ─── */
 .text-glow-red {
-  text-shadow: 0 0 20px rgba(237, 29, 36, 0.6), 0 0 40px rgba(237, 29, 36, 0.3);
+  text-shadow: 0 0 20px rgba(237, 29, 36, 0.6), 0 0 40px rgba(237, 29, 36, 0.3), 0 0 60px rgba(237, 29, 36, 0.1);
 }
 
 .text-glow-gold {
   text-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 215, 0, 0.3);
 }
 
+.text-gradient {
+  background: linear-gradient(135deg, var(--marvel-red), var(--marvel-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Box Glow ─── */
 .glow-red {
   box-shadow: var(--shadow-glow-red);
 }
@@ -112,9 +142,46 @@ body {
   box-shadow: var(--shadow-glow-gold);
 }
 
+.glow-red-hover:hover {
+  box-shadow: 0 0 32px rgba(237, 29, 36, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.glow-gold-hover:hover {
+  box-shadow: 0 0 32px rgba(255, 215, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ─── Class Glow Borders ─── */
+.border-glow-mutant:hover { border-color: var(--class-mutant); box-shadow: 0 0 20px rgba(255, 215, 0, 0.15); }
+.border-glow-tech:hover { border-color: var(--class-tech); box-shadow: 0 0 20px rgba(0, 188, 212, 0.15); }
+.border-glow-skill:hover { border-color: var(--class-skill); box-shadow: 0 0 20px rgba(76, 175, 80, 0.15); }
+.border-glow-science:hover { border-color: var(--class-science); box-shadow: 0 0 20px rgba(156, 39, 176, 0.15); }
+.border-glow-mystic:hover { border-color: var(--class-mystic); box-shadow: 0 0 20px rgba(233, 30, 99, 0.15); }
+.border-glow-cosmic:hover { border-color: var(--class-cosmic); box-shadow: 0 0 20px rgba(33, 150, 243, 0.15); }
+
+/* ─── Animations ─── */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes pulse-glow {
@@ -132,8 +199,51 @@ body {
   to { transform: rotate(360deg); }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes particle-float {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+  25% { transform: translate(20px, -30px) scale(1.2); opacity: 0.8; }
+  50% { transform: translate(-10px, -50px) scale(0.8); opacity: 0.6; }
+  75% { transform: translate(15px, -20px) scale(1.1); opacity: 0.7; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(237, 29, 36, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(237, 29, 36, 0.4), 0 0 60px rgba(237, 29, 36, 0.1); }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes stagger-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.4s ease forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.4s ease forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.4s ease forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease forwards;
 }
 
 .animate-pulse-glow {
@@ -150,19 +260,116 @@ body {
   animation: spin-slow 3s linear infinite;
 }
 
-::-webkit-scrollbar {
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* ─── Stagger Utilities ─── */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+.stagger-5 { animation-delay: 0.25s; }
+.stagger-6 { animation-delay: 0.3s; }
+
+/* ─── Particle Effects ─── */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particle-float 8s ease-in-out infinite;
+}
+
+.particle-sm {
+  width: 3px;
+  height: 3px;
+}
+
+.particle-md {
+  width: 5px;
+  height: 5px;
+}
+
+.particle-lg {
   width: 8px;
+  height: 8px;
+}
+
+/* ─── Card Interactions ─── */
+.card-lift {
+  transition: all var(--transition-normal);
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ─── Input Styling ─── */
+input::placeholder {
+  color: var(--marvel-light-gray);
+  opacity: 0.6;
+}
+
+input:focus {
+  outline: none;
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%238A8A9E' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 28px !important;
+}
+
+select option {
+  background: var(--marvel-dark);
+  color: var(--marvel-white);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--marvel-black);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--marvel-gray);
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--marvel-light-gray);
+  background: rgba(255, 255, 255, 0.2);
 }
+
+/* ─── Utility ─── */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ─── Section Divider ─── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+}
+
+/* ─── Class Color Strip ─── */
+.class-strip-mutant { background: linear-gradient(180deg, var(--class-mutant), transparent); }
+.class-strip-tech { background: linear-gradient(180deg, var(--class-tech), transparent); }
+.class-strip-skill { background: linear-gradient(180deg, var(--class-skill), transparent); }
+.class-strip-science { background: linear-gradient(180deg, var(--class-science), transparent); }
+.class-strip-mystic { background: linear-gradient(180deg, var(--class-mystic), transparent); }
+.class-strip-cosmic { background: linear-gradient(180deg, var(--class-cosmic), transparent); }

@@ -213,9 +213,10 @@ export default function MasteriesPage() {
 
   return (
     <div className="flex-1">
-      <section className="border-b border-white/10 bg-gradient-to-b from-[var(--marvel-dark)] to-[var(--marvel-black)] px-4 py-8 md:px-6">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex items-center justify-between">
+      <section className="relative overflow-hidden border-b border-white/10 bg-gradient-to-b from-[var(--marvel-dark)] to-[var(--marvel-black)] px-4 py-8 md:px-6">
+        <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[var(--class-mutant)] blur-[120px] opacity-10" />
+        <div className="mx-auto max-w-7xl relative">
+          <div className="flex items-center justify-between animate-fade-in-up">
             <div>
               <h1 className="font-heading text-3xl font-bold text-[var(--marvel-white)]">Mastery Advisor</h1>
               <p className="mt-1 text-sm text-[var(--marvel-light-gray)]">
@@ -224,7 +225,7 @@ export default function MasteriesPage() {
             </div>
             <button
               onClick={exportBuild}
-              className="rounded-xl bg-[var(--marvel-dark)] px-5 py-2.5 font-heading text-sm font-bold uppercase tracking-wider text-[var(--marvel-gold)] transition-all hover:glow-gold border border-[var(--marvel-gold)]/30"
+              className="rounded-xl px-5 py-2.5 font-heading text-sm font-bold uppercase tracking-wider text-[var(--marvel-gold)] transition-all hover:glow-gold border border-[var(--marvel-gold)]/30 hover:scale-105"
             >
               Export Build
             </button>

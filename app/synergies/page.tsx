@@ -71,10 +71,11 @@ export default function SynergiesPage() {
 
   return (
     <div className="flex-1">
-      <section className="border-b border-white/10 bg-gradient-to-b from-[var(--marvel-dark)] to-[var(--marvel-black)] px-4 py-8 md:px-6">
-        <div className="mx-auto max-w-7xl">
-          <h1 className="font-heading text-3xl font-bold text-[var(--marvel-white)]">Synergy Finder</h1>
-          <p className="mt-1 text-sm text-[var(--marvel-light-gray)]">Discover champion synergies and build optimal teams</p>
+      <section className="relative overflow-hidden border-b border-white/10 bg-gradient-to-b from-[var(--marvel-dark)] to-[var(--marvel-black)] px-4 py-8 md:px-6">
+        <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[var(--class-skill)] blur-[120px] opacity-10" />
+        <div className="mx-auto max-w-7xl relative">
+          <h1 className="font-heading text-3xl font-bold text-[var(--marvel-white)] animate-fade-in-up">Synergy Finder</h1>
+          <p className="mt-1 text-sm text-[var(--marvel-light-gray)] animate-fade-in stagger-2">Discover champion synergies and build optimal teams</p>
         </div>
       </section>
 

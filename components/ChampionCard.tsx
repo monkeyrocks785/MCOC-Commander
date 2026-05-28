@@ -24,6 +24,24 @@ const classColors: Record<string, string> = {
   Cosmic: "var(--class-cosmic)",
 };
 
+const classIcons: Record<string, string> = {
+  Mutant: "🧬",
+  Tech: "⚙",
+  Skill: "⚔",
+  Science: "🔬",
+  Mystic: "🔮",
+  Cosmic: "🌌",
+};
+
+const classGlows: Record<string, string> = {
+  Mutant: "border-glow-mutant",
+  Tech: "border-glow-tech",
+  Skill: "border-glow-skill",
+  Science: "border-glow-science",
+  Mystic: "border-glow-mystic",
+  Cosmic: "border-glow-cosmic",
+};
+
 const roleColors: Record<string, string> = {
   Attacker: "#4CAF50",
   Defender: "#F44336",
@@ -38,28 +56,35 @@ interface ChampionCardProps {
 
 export default function ChampionCard({ champion, onAdd, showAdd }: ChampionCardProps) {
   const classColor = classColors[champion.class] || "var(--marvel-light-gray)";
+  const classIcon = classIcons[champion.class] || "★";
+  const glowClass = classGlows[champion.class] || "";
   const stars = Array.from({ length: champion.starRange.max - champion.starRange.min + 1 }, (_, i) => i + champion.starRange.min);
 
   return (
     <div
-      className="glass group rounded-xl p-4 transition-all duration-[var(--transition-normal)] hover:scale-[1.02] hover:shadow-[var(--shadow-card)]"
+      className={`glass-card group relative overflow-hidden rounded-xl p-4 ${glowClass}`}
       style={{ borderLeft: `3px solid ${classColor}` }}
     >
+      <div className="absolute top-0 right-0 h-16 w-16 opacity-[0.03]" style={{ background: `radial-gradient(circle at top right, ${classColor}, transparent)` }} />
+
       <div className="mb-3 flex items-start justify-between">
-        <div className="flex-1">
+        <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
             <TierBadge tier={champion.tier} size="sm" />
             <h3 className="font-heading text-base font-bold text-[var(--marvel-white)] truncate">
               {champion.name}
             </h3>
           </div>
-          <span className="text-xs font-medium" style={{ color: classColor }}>
-            {champion.class}
-          </span>
+          <div className="mt-0.5 flex items-center gap-1.5">
+            <span className="text-[10px]">{classIcon}</span>
+            <span className="text-xs font-medium" style={{ color: classColor }}>
+              {champion.class}
+            </span>
+          </div>
         </div>
       </div>
 
-      <div className="mb-2 flex gap-0.5">
+      <div className="mb-2.5 flex gap-0.5">
         {stars.map((s) => (
           <span key={s} className="text-xs" style={{ color: s <= 5 ? "var(--marvel-gold)" : "var(--marvel-red)" }}>
             ★
@@ -67,7 +92,7 @@ export default function ChampionCard({ champion, onAdd, showAdd }: ChampionCardP
         ))}
       </div>
 
-      <div className="mb-3 flex flex-wrap gap-1">
+      <div className="mb-2.5 flex flex-wrap gap-1">
         {champion.roles.map((role) => (
           <span
             key={role}
@@ -94,15 +119,15 @@ export default function ChampionCard({ champion, onAdd, showAdd }: ChampionCardP
                   : "#9E9E9E",
           }}
         >
-          {champion.awakeningPriority} Wake
+          {champion.awakeningPriority === "High" ? "★" : champion.awakeningPriority === "Medium" ? "◆" : "○"} {champion.awakeningPriority}
         </span>
       </div>
 
-      <div className="mb-3 flex flex-wrap gap-1">
+      <div className="mb-2.5 flex flex-wrap gap-1">
         {champion.abilities.slice(0, 3).map((ability) => (
           <span
             key={ability}
-            className="rounded bg-white/5 px-1.5 py-0.5 text-[10px] text-[var(--marvel-light-gray)]"
+            className="rounded bg-white/5 px-1.5 py-0.5 text-[10px] text-[var(--marvel-light-gray)] transition-colors group-hover:bg-white/8"
           >
             {ability}
           </span>
@@ -115,20 +140,25 @@ export default function ChampionCard({ champion, onAdd, showAdd }: ChampionCardP
       </div>
 
       {champion.immunities.length > 0 && (
-        <div className="mb-3 flex flex-wrap gap-1">
-          {champion.immunities.map((imm) => (
+        <div className="mb-2.5 flex flex-wrap gap-1">
+          {champion.immunities.slice(0, 3).map((imm) => (
             <span
               key={imm}
-              className="rounded bg-[#4CAF50]/10 px-1.5 py-0.5 text-[10px] text-[#4CAF50]"
+              className="flex items-center gap-1 rounded bg-[#4CAF50]/10 px-1.5 py-0.5 text-[10px] text-[#4CAF50]"
             >
-              Immune: {imm}
+              <span className="text-[8px]">🛡</span> {imm}
             </span>
           ))}
+          {champion.immunities.length > 3 && (
+            <span className="rounded bg-[#4CAF50]/10 px-1.5 py-0.5 text-[10px] text-[#4CAF50]">
+              +{champion.immunities.length - 3}
+            </span>
+          )}
         </div>
       )}
 
       {champion.description && (
-        <p className="mb-3 text-[11px] leading-relaxed text-[var(--marvel-light-gray)]">
+        <p className="mb-3 text-[11px] leading-relaxed text-[var(--marvel-light-gray)] line-clamp-2">
           {champion.description}
         </p>
       )}
@@ -136,9 +166,9 @@ export default function ChampionCard({ champion, onAdd, showAdd }: ChampionCardP
       {showAdd && onAdd && (
         <button
           onClick={() => onAdd(champion)}
-          className="mt-1 w-full rounded-lg bg-white/10 py-2 text-xs font-semibold uppercase tracking-wider text-[var(--marvel-white)] transition-all duration-[var(--transition-fast)] hover:bg-[var(--marvel-red)] font-heading"
+          className="mt-1 w-full rounded-lg bg-white/10 py-2 text-xs font-semibold uppercase tracking-wider text-[var(--marvel-white)] transition-all duration-200 hover:bg-[var(--marvel-red)] hover:shadow-[0_0_16px_rgba(237,29,36,0.3)] font-heading"
         >
-          Add to Roster
+          + Add to Roster
         </button>
       )}
     </div>

@@ -81,9 +81,10 @@ export default function RosterPage() {
 
   return (
     <div className="flex-1">
-      <section className="border-b border-white/10 bg-gradient-to-b from-[var(--marvel-dark)] to-[var(--marvel-black)] px-4 py-8 md:px-6">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex items-center justify-between">
+      <section className="relative overflow-hidden border-b border-white/10 bg-gradient-to-b from-[var(--marvel-dark)] to-[var(--marvel-black)] px-4 py-8 md:px-6">
+        <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[var(--marvel-red)] blur-[120px] opacity-10" />
+        <div className="mx-auto max-w-7xl relative">
+          <div className="flex items-center justify-between animate-fade-in-up">
             <div>
               <h1 className="font-heading text-3xl font-bold text-[var(--marvel-white)]">My Roster</h1>
               <p className="mt-1 text-sm text-[var(--marvel-light-gray)]">
@@ -92,14 +93,14 @@ export default function RosterPage() {
             </div>
             <button
               onClick={() => setModalOpen(true)}
-              className="rounded-xl bg-[var(--marvel-red)] px-5 py-2.5 font-heading text-sm font-bold uppercase tracking-wider text-white transition-all hover:glow-red"
+              className="rounded-xl bg-[var(--marvel-red)] px-5 py-2.5 font-heading text-sm font-bold uppercase tracking-wider text-white transition-all hover:glow-red hover:scale-105"
             >
               + Add
             </button>
           </div>
 
           {gaps.length > 0 && (
-            <div className="glass mt-4 rounded-xl p-4">
+            <div className="glass-card mt-4 rounded-xl p-4 animate-fade-in stagger-2">
               <h3 className="mb-2 font-heading text-sm font-bold uppercase tracking-wider text-[var(--marvel-gold)]">
                 Rank-Up Suggestions
               </h3>
