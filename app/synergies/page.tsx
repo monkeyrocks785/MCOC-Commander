@@ -9,38 +9,38 @@ export default function SynergiesPage() {
   const [mode, setMode] = useState<"browse" | "team">("browse");
   const [teamPicks, setTeamPicks] = useState<string[]>([]);
 
-  const synergies = synergiesData.synergies || [];
-  const pairs = synergiesData.pairs || [];
+  const allSynergies = useMemo(() => synergiesData.synergies || [], []);
+  const allPairs = useMemo(() => synergiesData.pairs || [], []);
 
   const filteredSynergies = useMemo(() => {
-    if (!search) return synergies;
+    if (!search) return allSynergies;
     const q = search.toLowerCase();
-    return synergies.filter((s) =>
+    return allSynergies.filter((s) =>
       s.champions.some((c) => c.toLowerCase().includes(q))
     );
-  }, [search, synergies]);
+  }, [search, allSynergies]);
 
   const filteredPairs = useMemo(() => {
-    if (!search) return pairs;
+    if (!search) return allPairs;
     const q = search.toLowerCase();
-    return pairs.filter(
+    return allPairs.filter(
       (p) =>
         p.championA.toLowerCase().includes(q) ||
         p.championB.toLowerCase().includes(q)
     );
-  }, [search, pairs]);
+  }, [search, allPairs]);
 
   const allChampNames = useMemo(() => {
     const set = new Set<string>();
-    for (const s of synergies) {
+    for (const s of allSynergies) {
       for (const c of s.champions) set.add(c);
     }
-    for (const p of pairs) {
+    for (const p of allPairs) {
       set.add(p.championA);
       set.add(p.championB);
     }
     return Array.from(set).sort();
-  }, [synergies, pairs]);
+  }, [allSynergies, allPairs]);
 
   const toggleTeamPick = (name: string) => {
     setTeamPicks((prev) =>
@@ -51,15 +51,15 @@ export default function SynergiesPage() {
   const teamSynergies = useMemo(() => {
     if (teamPicks.length < 2) return [];
     const picks = new Set(teamPicks.map((n) => n.toLowerCase()));
-    const results: { type: "pair" | "team"; data: any }[] = [];
+    const results: { type: "pair" | "team"; data: { description: string; bonus?: string; type?: string } }[] = [];
 
-    for (const p of pairs) {
+    for (const p of allPairs) {
       if (picks.has(p.championA.toLowerCase()) && picks.has(p.championB.toLowerCase())) {
         results.push({ type: "pair", data: p });
       }
     }
 
-    for (const s of synergies) {
+    for (const s of allSynergies) {
       const matchCount = s.champions.filter((c) => picks.has(c.toLowerCase())).length;
       if (matchCount >= 2) {
         results.push({ type: "team", data: s });
@@ -67,14 +67,14 @@ export default function SynergiesPage() {
     }
 
     return results;
-  }, [teamPicks, pairs, synergies]);
+  }, [teamPicks, allPairs, allSynergies]);
 
   return (
     <div className="flex-1">
       <section className="border-b border-white/10 bg-gradient-to-b from-[var(--marvel-dark)] to-[var(--marvel-black)] px-4 py-8 md:px-6">
         <div className="mx-auto max-w-7xl">
           <h1 className="font-heading text-3xl font-bold text-[var(--marvel-white)]">Synergy Finder</h1>
-          <p className="mt-1 text-sm text-[var(--marvel-light-gray])">Discover champion synergies and build optimal teams</p>
+          <p className="mt-1 text-sm text-[var(--marvel-light-gray)]">Discover champion synergies and build optimal teams</p>
         </div>
       </section>
 
@@ -138,7 +138,7 @@ export default function SynergiesPage() {
             {teamSynergies.length > 0 ? (
               <div className="glass rounded-xl p-4 mb-4">
                 <h3 className="mb-3 font-heading text-sm font-bold text-[var(--marvel-gold)]">
-                  Active Synergies ({teamSynergies.length})
+                  Active allSynergies ({teamSynergies.length})
                 </h3>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {teamSynergies.map((syn, i) => (
@@ -155,7 +155,7 @@ export default function SynergiesPage() {
                 </div>
               </div>
             ) : teamPicks.length >= 2 ? (
-              <p className="text-sm text-[var(--marvel-light-gray)]">No synergies found between these champions.</p>
+              <p className="text-sm text-[var(--marvel-light-gray)]">No allSynergies found between these champions.</p>
             ) : null}
           </div>
         )}
@@ -207,7 +207,7 @@ export default function SynergiesPage() {
                 Best Synergy Teams
               </h2>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {(synergies.filter((s) =>
+                {(allSynergies.filter((s) =>
                   ["The Trinity", "Houses of X", "Rise of the Horsemen", "Symbiote Hive", "Ant-Family", "Deadpool Family"].includes(s.name)
                 )).map((syn, i) => (
                   <SynergyCard

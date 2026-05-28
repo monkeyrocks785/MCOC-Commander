@@ -13,7 +13,6 @@ interface RosterEntry {
 }
 
 interface ChampionModalProps {
-  open: boolean;
   onClose: () => void;
   onSave: (entry: RosterEntry) => void;
 }
@@ -54,7 +53,7 @@ const mockChampions = [
 const ranks = [1, 2, 3, 4, 5];
 const starsList = [3, 4, 5, 6, 7];
 
-export default function ChampionModal({ open, onClose, onSave }: ChampionModalProps) {
+export default function ChampionModal({ onClose, onSave }: ChampionModalProps) {
   const [search, setSearch] = useState("");
   const [selectedChamp, setSelectedChamp] = useState<string | null>(null);
   const [star, setStar] = useState(5);
@@ -63,25 +62,12 @@ export default function ChampionModal({ open, onClose, onSave }: ChampionModalPr
   const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (open) {
-      setSearch("");
-
-      setSelectedChamp(null);
-      setStar(5);
-      setRank(1);
-      setAwakened(false);
-    }
-  }, [open]);
-
-  useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
-    if (open) document.addEventListener("keydown", handleEsc);
+    document.addEventListener("keydown", handleEsc);
     return () => document.removeEventListener("keydown", handleEsc);
-  }, [open, onClose]);
-
-  if (!open) return null;
+  }, [onClose]);
 
   const filtered = mockChampions.filter((c) =>
     c.name.toLowerCase().includes(search.toLowerCase())

@@ -19,21 +19,20 @@ interface RosterEntry {
 }
 
 export default function RosterPage() {
-  const [entries, setEntries] = useState<RosterEntry[]>([]);
+  const [entries, setEntries] = useState<RosterEntry[]>(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const saved = localStorage.getItem("mcoc-roster");
+        return saved ? JSON.parse(saved) : [];
+      } catch { }
+    }
+    return [];
+  });
   const [modalOpen, setModalOpen] = useState(false);
   const [filterClass, setFilterClass] = useState("All");
   const [filterTier, setFilterTier] = useState("All");
   const [filterRole, setFilterRole] = useState("All");
   const [filterAwakened, setFilterAwakened] = useState<boolean | null>(null);
-
-  useEffect(() => {
-    const saved = localStorage.getItem("mcoc-roster");
-    if (saved) {
-      try {
-        setEntries(JSON.parse(saved));
-      } catch { }
-    }
-  }, []);
 
   useEffect(() => {
     localStorage.setItem("mcoc-roster", JSON.stringify(entries));
@@ -203,11 +202,12 @@ export default function RosterPage() {
         )}
       </section>
 
-      <ChampionModal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        onSave={handleAdd}
-      />
+      {modalOpen && (
+        <ChampionModal
+          onClose={() => setModalOpen(false)}
+          onSave={handleAdd}
+        />
+      )}
     </div>
   );
 }

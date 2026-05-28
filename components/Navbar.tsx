@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -22,7 +23,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 h-[var(--nav-height)] glass-strong shadow-[var(--shadow-nav)]">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 no-underline">
-          <img src="/logo.svg" alt="MCOC Commander" className="h-8 w-auto" />
+          <Image src="/logo.svg" alt="MCOC Commander" width={120} height={32} className="h-8 w-auto" priority />
         </Link>
 
         <div className="hidden items-center gap-1 md:flex">

@@ -15,7 +15,6 @@ export default function ChampionsPage() {
   const [filterTier, setFilterTier] = useState("All");
   const [filterRole, setFilterRole] = useState("All");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  const [selectedChamp, setSelectedChamp] = useState<Champion | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
 
   const allChampions = championsData.champions as Champion[];
@@ -117,10 +116,7 @@ export default function ChampionsPage() {
                 <ChampionCard
                   champion={champ}
                   showAdd
-                  onAdd={() => {
-                    setSelectedChamp(champ);
-                    setModalOpen(true);
-                  }}
+                  onAdd={() => setModalOpen(true)}
                 />
               </div>
             ))}
@@ -178,10 +174,7 @@ export default function ChampionsPage() {
                   ))}
                 </div>
                 <button
-                  onClick={() => {
-                    setSelectedChamp(champ);
-                    setModalOpen(true);
-                  }}
+                  onClick={() => setModalOpen(true)}
                   className="rounded-lg bg-white/10 px-3 py-1.5 text-xs font-semibold text-[var(--marvel-white)] transition-colors hover:bg-[var(--marvel-red)] font-heading uppercase tracking-wider"
                 >
                   + Add
@@ -198,11 +191,12 @@ export default function ChampionsPage() {
         )}
       </section>
 
-      <ChampionModal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        onSave={handleAdd}
-      />
+      {modalOpen && (
+        <ChampionModal
+          onClose={() => setModalOpen(false)}
+          onSave={handleAdd}
+        />
+      )}
     </div>
   );
 }

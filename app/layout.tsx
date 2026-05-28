@@ -54,7 +54,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col antialiased">
         <Navbar />
-        <main className="flex flex-1 flex-col pt-[var(--nav-height)]">
+        <main className="flex flex-1 flex-col pt-[var(--nav-height)] animate-fade-in">
           {children}
         </main>
         <Footer />
